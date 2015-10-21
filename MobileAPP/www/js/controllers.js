@@ -133,6 +133,11 @@ angular.module('MobileAPP.controllers', [
             $scope.Setting = {};
             $scope.Setting.WebServiceURL = strWebServiceURL.replace('http://', '');
             $scope.Setting.BaseUrl = strBaseUrl.replace('/', '');
+            if (strPL43Device > 0) {
+                $scope.Setting.PL43Device = { checked: true };
+            } else {
+                $scope.Setting.PL43Device = { checked: false };
+            }
             $scope.returnLogin = function () {
                 $state.go('login', { 'CheckUpdate': 'Y' }, { reload: true });
             };
@@ -149,7 +154,12 @@ angular.module('MobileAPP.controllers', [
                         strBaseUrl = "/" + strBaseUrl;
                     }
                 } else { $scope.Setting.BaseUrl = strBaseUrl }
-                var data = 'BaseUrl=' + $scope.Setting.BaseUrl + '##WebServiceURL=' + $scope.Setting.WebServiceURL;
+                if ($scope.Setting.PL43Device.checked) {
+                    strPL43Device = "1";
+                } else {
+                    strPL43Device = "0";
+                }
+                var data = 'BaseUrl=' + $scope.Setting.BaseUrl + '##WebServiceURL=' + $scope.Setting.WebServiceURL + '##PL43Device=' + strPL43Device;
                 var path = cordova.file.externalRootDirectory;
                 var directory = "WmsApp";
                 var file = directory + "/Config.txt";

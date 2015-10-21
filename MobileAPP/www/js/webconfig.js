@@ -1,3 +1,4 @@
+var strPL43Device = "0"; // 0 - false ; 1 - true
 /* SysFreight Server */
 var strBaseUrl = "WmsWS";
 var strWebServiceURL = "www.sysfreight.net:8081";

@@ -14,7 +14,7 @@ app.run(['$ionicPlatform', '$rootScope', '$state', '$location', '$timeout', '$io
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 //
-                var data = 'BaseUrl=' + strBaseUrl +'##WebServiceURL='+strWebServiceURL;
+                var data = 'BaseUrl=' + strBaseUrl + '##WebServiceURL=' + strWebServiceURL + '##PL43Device=' + strPL43Device;
                 var path = cordova.file.externalRootDirectory;
                 var directory = "WmsApp";
                 var file = directory + "/Config.txt";
@@ -46,6 +46,10 @@ app.run(['$ionicPlatform', '$rootScope', '$state', '$location', '$timeout', '$io
                                         var arWebServiceURL = arConf[1].split("=");
                                         if(arWebServiceURL[1].length>0){
                                             strWebServiceURL = arWebServiceURL[1]; 
+                                        }
+                                        var arPL43Device = arConf[2].split("=");
+                                        if (arPL43Device[1].length > 0) {
+                                            strPL43Device = arPL43Device[1];
                                         }
                                         //
                                         if (strBaseUrl.length > 0) {
