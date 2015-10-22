@@ -51,7 +51,7 @@ angular.module('MobileAPP.services', ['ionic'])
                 });
                 $timeout(function () {
                     alertPopup.close();
-                }, 2500);
+                }, 5000);
                 if (onError) onError(response);
             }
         }).error(function (response) {
@@ -94,7 +94,7 @@ angular.module('MobileAPP.services', ['ionic'])
                 });
                 $timeout(function () {
                     alertPopup.close();
-                }, 2000);
+                }, 5000);
             }
         }).error(function (response) {
             try {

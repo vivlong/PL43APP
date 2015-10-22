@@ -92,7 +92,11 @@ app.run(['$ionicPlatform', '$rootScope', '$state', '$location', '$timeout', '$io
         });
     
         $ionicPlatform.registerBackButtonAction(function (e) {
-            e.preventDefault();
+            /*
+            if ($cordovaKeyboard.isVisible()) {
+                $cordovaKeyboard.close();
+            }
+            */
             // Is there a page to go back to $state.include
             if ($state.includes('main') || $state.includes('login') || $state.includes('loading')) {
                 if ($rootScope.backButtonPressedOnceToExit) {
@@ -138,6 +142,7 @@ app.run(['$ionicPlatform', '$rootScope', '$state', '$location', '$timeout', '$io
                     $rootScope.backButtonPressedOnceToExit = false;
                 }, 2000);
             }
+            e.preventDefault();
             return false;
         }, 101);
     }]);
