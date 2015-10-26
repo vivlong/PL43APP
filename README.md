@@ -1,5 +1,5 @@
-# EventListAPP
-An Android APP of SysFreight EventList Project
+# WMS APP
+A Mobile APP of SysFreight WMS Project
 
 # Environment
 VS 2015 Community
