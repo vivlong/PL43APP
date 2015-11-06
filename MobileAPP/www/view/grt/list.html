@@ -18,8 +18,9 @@
                         <ui-select-match allow-clear="true" placeholder="Enter to search..." style="overflow:hidden;">{{$select.selected.BusinessPartyCode}}</ui-select-match>
                         <ui-select-choices repeat="Rcbp1 in Rcbp1s track by $index"
                                            refresh="refreshRcbp1($select.search)"
-                                           refresh-delay="0">
-                            <div ng-bind-html="Rcbp1.BusinessPartyName | highlight: $select.search"></div>
+                                           refresh-delay="0"
+                                           position="down">
+                            <div ng-bind="Rcbp1.BusinessPartyName"></div>
                         </ui-select-choices>
                     </ui-select>
                 </div>
@@ -36,8 +37,9 @@
                         <ui-select-match allow-clear="true" placeholder="Enter to search..." style="overflow:hidden;">{{$select.selected.GoodsReceiptNoteNo}}</ui-select-match>
                         <ui-select-choices repeat="GrnNo in GrnNos track by $index"
                                            refresh="refreshGrnNos($select.search)"
-                                           refresh-delay="0">
-                            <div ng-bind-html="GrnNo.GoodsReceiptNoteNo | highlight: $select.search"></div>
+                                           refresh-delay="0"
+                                           position="down">
+                            <div ng-bind="GrnNo.GoodsReceiptNoteNo"></div>
                         </ui-select-choices>
                     </ui-select>
                 </div>
