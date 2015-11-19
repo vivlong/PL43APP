@@ -321,6 +321,12 @@ angular.module('MobileAPP.controllers', [
             $scope.returnMain = function () {
                 $state.go('main', {}, { reload: true });
             };
+            $('#div-list-rcbp').on('focus', (function () {
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    cordova.plugins.Keyboard.close();
+                }
+            }));
+            $('#div-list-rcbp').focus();
         }])
     .controller('GrtDetailCtrl',
         ['$scope', '$stateParams', '$state', '$http', '$timeout', '$ionicHistory', '$ionicLoading', '$ionicPopup', '$ionicModal', '$cordovaToast', '$cordovaBarcodeScanner', '$cordovaPL43Scanner', 'JsonServiceClient',
@@ -822,6 +828,12 @@ angular.module('MobileAPP.controllers', [
             $scope.returnMain = function () {
                 $state.go('main', {}, { reload: true });
             };
+            $('#div-list-rcbp').on('focus', (function () {
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    cordova.plugins.Keyboard.close();
+                }
+            }));
+            $('#div-list-rcbp').focus();
         }])
     .controller('VginDetailCtrl',
         ['$scope', '$stateParams', '$state', '$http', '$timeout', '$ionicHistory', '$ionicLoading', '$ionicPopup', '$cordovaToast', '$cordovaBarcodeScanner', '$cordovaPL43Scanner', 'JsonServiceClient',

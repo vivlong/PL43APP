@@ -13,8 +13,7 @@
                     <ui-select ng-model="Rcbp1.selected"
                                theme="bootstrap"
                                reset-search-input="true"
-                               on-select="ShowImgr1(Rcbp1.selected.BusinessPartyCode)"
-                               autofocus="true">
+                               on-select="ShowImgr1(Rcbp1.selected.BusinessPartyCode)">
                         <ui-select-match allow-clear="true" placeholder="Enter to search..." style="overflow:hidden;">{{$select.selected.BusinessPartyCode}}</ui-select-match>
                         <ui-select-choices repeat="Rcbp1 in Rcbp1s track by $index"
                                            refresh="refreshRcbp1($select.search)"
